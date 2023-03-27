@@ -35,3 +35,8 @@ body {
     font-weight: 900;
     color: var(--color-light-grey);
 }
+
+/* controls */
+.controls {
+    background: yellow;
+}
