@@ -5,5 +5,31 @@ const number = document.querySelector('[data-key="number"]');
 const add = document.querySelector('[data-key="add"]');
 const subtract = document.querySelector('[data-key="subtract"]');
 
+const subtractHandler = () => {
+    const newValue = parseInt(number.value) - 1;
+    number.value = newValue;
+
+    if (add.disabled) {
+        add.disabled = false;
+    }
+
+    if (newValue <= MIN_NUMBER) {
+        subtract.disabled = true;
+    }
+}
+
+const addHandler = () => {
+    const newValue = parseInt(number.value) + 1;
+    number.value = newValue;
+
+    if (subtract.disabled) {
+        subtract.disabled = false;
+    }
+
+    if (newValue >= MAX_NUMBER) {
+        add.disabled = true;
+    }
+}
+
 subtract.addEventListener('click', subtractHandler);
 add.addEventListener('click', addHandler);
